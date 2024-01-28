@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid responsive layout</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      header,
+      nav,
+      article,
+      aside,
+      footer {
+        background-color: antiquewhite;
+        border: 1px solid tomato;
+        padding: 5px;
+        margin: 5px;
+      }
+
+      ul > li {
+        list-style: none;
+      }
+
+      .header {
+        grid-area: header;
+      }
+
+      .nav {
+        grid-area: nav;
+      }
+
+      article {
+        grid-area: article;
+      }
+
+      .advertising {
+        grid-area: advertising;
+      }
+      .sidebar {
+        grid-area: sidebar;
+      }
+
+      .footer {
+        grid-area: footer;
+      }
+
+      .container {
+        display: grid;
+        grid-template-areas:
+          "header  header   header   header"
+          "nav     article  article  sidebar"
+          "nav     article  article  advertising"
+          "footer  footer   footer   footer";
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <p>The Header</p>
+      </header>
+
+      <nav class="nav">
+        <ul>
+          <li><a href="">Nav-1</a></li>
+          <li><a href="">Nav-2</a></li>
+          <li><a href="">Nav-3</a></li>
+        </ul>
+      </nav>
+      <article>
+        <h1>Main article area</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos iusto
+          rerum consequatur accusamus autem, voluptate in possimus id, odit
+          beatae molestias hic animi suscipit aspernatur. Nulla ipsa adipisci
+          ipsum enim.
+        </p>
+      </article>
+      <aside class="sidebar">Sidebar</aside>
+      <aside class="advertising">Advertising</aside>
+
+      <footer class="footer">
+        <p>The footer</p>
+      </footer>
+    </div>
+  </body>
+</html>
